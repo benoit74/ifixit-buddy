@@ -1,0 +1,39 @@
+{
+    "manifest_version": 3,
+    "name": "iFixit Buddy",
+    "version": "0.1",
+    "description": "Helps advanced iFixit users like translators",
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*.ifixit.com/*"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ],
+    "icons": {
+        "48": "icons/star.png"
+    },
+    "permissions": ["clipboardRead", "clipboardWrite"],
+    "sidebar_action": {
+        "default_icon": "icons/star.png",
+        "default_title": "iFixit Buddy",
+        "default_panel": "sidebar/panel.html"
+    },
+    "commands": {
+        "start-translation": {
+            "suggested_key": {
+                "default": "Ctrl+Alt+X",
+                "mac": "Command+Alt+X"
+            },
+            "description": "Sends clipboard content to the extension for translation"
+        }
+    },
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "ifixit-buddy@ploumpouloum.com"
+        }
+    }
+}
